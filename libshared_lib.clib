@@ -1,0 +1,3 @@
+shared_lib_stubs.o
+shared_lib_main.cmxa
+shared_lib_main.cmx
