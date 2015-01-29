@@ -25,6 +25,7 @@ module C_tools = struct
     end resluts in
     Cmd(S[!Options.ocamlopt; A"-o"; Px dll; T(tags_of_pathname dll++"c"++"dll"++"ocaml"++"link"++"native"++"output_obj"); Command.atomize objs]);;
   let _ = flag ["ocaml"; "link"; "dll"] & A"-linkpkg"
+  let _ = flag ["native"; "link"; "dll"] & S[A"-cclib";A"-exported_symbols_list ../symb"]
 end
 
 let after_rules () =

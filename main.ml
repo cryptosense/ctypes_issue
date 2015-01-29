@@ -1,7 +1,7 @@
 
 open Ctypes
 
-let lib = Dl.dlopen ~filename:Sys.argv.(1) ~flags: [ Dl.RTLD_NOW]
+let lib = Dl.dlopen ~filename:Sys.argv.(1) ~flags: [ Dl.RTLD_LOCAL; Dl.RTLD_NOW]
 
 let double_ext = Foreign.foreign ~from:lib ~stub:true "xxx_double_fun" (int @-> returning int)
 let check_compare = Foreign.foreign ~from:lib ~stub:true "check_compare" (int @-> returning int)
